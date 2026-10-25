@@ -1,0 +1,8 @@
+field,size_bytes,basis,pct_of_record,status
+channel_header,24,Fabric common.ChannelHeader: channel ID + tx type + timestamp,5.47,unverified
+tx_id,12,"hexid(24) = 24 hex chars = 12 bytes, matches every tx_id generated elsewhere in this dataset",2.73,unverified
+creator_cert_ref,32,"ASSUMPTION: short cert fingerprint reference, not the full x.509 cert",7.29,unverified
+chaincode_proposal_payload,128,"ASSUMPTION: HRBAC decision record (role, operation, resource, decision)",29.16,unverified
+crt_residue_payload,3,"variable 2-3 residues x 1 byte (ledger-stored VALUE only -- the 8-byte figure elsewhere, CRT_PACKET_PAYLOAD_B, is the over-the-air packet including LoRa framing, a different layer)",0.68,unverified
+endorsement_signatures,192,ASSUMPTION: 3 endorsing-peer Ed25519 signatures x 64 bytes,43.74,unverified
+block_metadata_overhead,48,ASSUMPTION: Fabric block/transaction metadata not attributable to one record,10.93,unverified

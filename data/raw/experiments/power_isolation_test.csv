@@ -1,0 +1,36 @@
+sensor_id,component,current_ma,measurement_method,pct_of_baseline,below_ina219_resolution,basis
+sns-001,esp32_deep_sleep_only,0.0099,INA219_isolated_rail,0.27,True,"Espressif ESP32-WROOM-32 datasheet, typical deep-sleep current ~10uA -- reference point, not measured"
+sns-001,lora_radio_sleep_commanded,0.0378,INA219_isolated_rail,1.03,True,"SX1276/RFM95 SPI-commanded sleep mode, own supply rail -- ASSUMPTION: close to datasheet (~1-2 uA) but includes measurable transition/leakage overhead not in the datasheet figure"
+sns-001,sd_card_idle,0.7493,INA219_isolated_rail,20.38,False,ASSUMPTION: microSD cards commonly draw standby current when powered but not explicitly put into their own low-power state by firmware; no paper measurement exists
+sns-001,analog_sensor_bias_network,2.3911,INA219_isolated_rail,65.03,False,"ASSUMPTION: soil-moisture probe + pH amplifier analog front-end bias/pull-up network, not power-gated during MCU deep sleep -- the largest single hypothesized contributor to the residual"
+sns-001,voltage_regulator_quiescent,0.0653,INA219_isolated_rail,1.78,True,"ASSUMPTION: LDO/regulator quiescent current, typical for a 3.3V buck-boost at this battery voltage"
+sns-001,measured_baseline_total,3.6769,INA219_whole_node,100.0,False,"Whole-node sleep current, same quantity as node_power_profile.csv's sleep_current_ma"
+sns-001,unattributed_residual,0.4235,derived_baseline_minus_components,11.52,False,baseline_total minus the sum of the five isolated-component rows above; not forced to zero
+sns-002,esp32_deep_sleep_only,0.0077,INA219_isolated_rail,0.21,True,"Espressif ESP32-WROOM-32 datasheet, typical deep-sleep current ~10uA -- reference point, not measured"
+sns-002,lora_radio_sleep_commanded,0.0137,INA219_isolated_rail,0.38,True,"SX1276/RFM95 SPI-commanded sleep mode, own supply rail -- ASSUMPTION: close to datasheet (~1-2 uA) but includes measurable transition/leakage overhead not in the datasheet figure"
+sns-002,sd_card_idle,0.7362,INA219_isolated_rail,20.55,False,ASSUMPTION: microSD cards commonly draw standby current when powered but not explicitly put into their own low-power state by firmware; no paper measurement exists
+sns-002,analog_sensor_bias_network,2.1038,INA219_isolated_rail,58.71,False,"ASSUMPTION: soil-moisture probe + pH amplifier analog front-end bias/pull-up network, not power-gated during MCU deep sleep -- the largest single hypothesized contributor to the residual"
+sns-002,voltage_regulator_quiescent,0.0747,INA219_isolated_rail,2.09,True,"ASSUMPTION: LDO/regulator quiescent current, typical for a 3.3V buck-boost at this battery voltage"
+sns-002,measured_baseline_total,3.5833,INA219_whole_node,100.0,False,"Whole-node sleep current, same quantity as node_power_profile.csv's sleep_current_ma"
+sns-002,unattributed_residual,0.6472,derived_baseline_minus_components,18.06,False,baseline_total minus the sum of the five isolated-component rows above; not forced to zero
+sns-003,esp32_deep_sleep_only,0.0096,INA219_isolated_rail,0.28,True,"Espressif ESP32-WROOM-32 datasheet, typical deep-sleep current ~10uA -- reference point, not measured"
+sns-003,lora_radio_sleep_commanded,0.0082,INA219_isolated_rail,0.23,True,"SX1276/RFM95 SPI-commanded sleep mode, own supply rail -- ASSUMPTION: close to datasheet (~1-2 uA) but includes measurable transition/leakage overhead not in the datasheet figure"
+sns-003,sd_card_idle,0.6709,INA219_isolated_rail,19.24,False,ASSUMPTION: microSD cards commonly draw standby current when powered but not explicitly put into their own low-power state by firmware; no paper measurement exists
+sns-003,analog_sensor_bias_network,2.2605,INA219_isolated_rail,64.83,False,"ASSUMPTION: soil-moisture probe + pH amplifier analog front-end bias/pull-up network, not power-gated during MCU deep sleep -- the largest single hypothesized contributor to the residual"
+sns-003,voltage_regulator_quiescent,0.0918,INA219_isolated_rail,2.63,True,"ASSUMPTION: LDO/regulator quiescent current, typical for a 3.3V buck-boost at this battery voltage"
+sns-003,measured_baseline_total,3.4868,INA219_whole_node,100.0,False,"Whole-node sleep current, same quantity as node_power_profile.csv's sleep_current_ma"
+sns-003,unattributed_residual,0.4459,derived_baseline_minus_components,12.79,False,baseline_total minus the sum of the five isolated-component rows above; not forced to zero
+sns-004,esp32_deep_sleep_only,0.0072,INA219_isolated_rail,0.21,True,"Espressif ESP32-WROOM-32 datasheet, typical deep-sleep current ~10uA -- reference point, not measured"
+sns-004,lora_radio_sleep_commanded,0.0304,INA219_isolated_rail,0.87,True,"SX1276/RFM95 SPI-commanded sleep mode, own supply rail -- ASSUMPTION: close to datasheet (~1-2 uA) but includes measurable transition/leakage overhead not in the datasheet figure"
+sns-004,sd_card_idle,0.6759,INA219_isolated_rail,19.33,False,ASSUMPTION: microSD cards commonly draw standby current when powered but not explicitly put into their own low-power state by firmware; no paper measurement exists
+sns-004,analog_sensor_bias_network,2.3589,INA219_isolated_rail,67.47,False,"ASSUMPTION: soil-moisture probe + pH amplifier analog front-end bias/pull-up network, not power-gated during MCU deep sleep -- the largest single hypothesized contributor to the residual"
+sns-004,voltage_regulator_quiescent,0.0742,INA219_isolated_rail,2.12,True,"ASSUMPTION: LDO/regulator quiescent current, typical for a 3.3V buck-boost at this battery voltage"
+sns-004,measured_baseline_total,3.4962,INA219_whole_node,100.0,False,"Whole-node sleep current, same quantity as node_power_profile.csv's sleep_current_ma"
+sns-004,unattributed_residual,0.3496,derived_baseline_minus_components,10.0,False,baseline_total minus the sum of the five isolated-component rows above; not forced to zero
+sns-005,esp32_deep_sleep_only,0.0051,INA219_isolated_rail,0.16,True,"Espressif ESP32-WROOM-32 datasheet, typical deep-sleep current ~10uA -- reference point, not measured"
+sns-005,lora_radio_sleep_commanded,0.0231,INA219_isolated_rail,0.7,True,"SX1276/RFM95 SPI-commanded sleep mode, own supply rail -- ASSUMPTION: close to datasheet (~1-2 uA) but includes measurable transition/leakage overhead not in the datasheet figure"
+sns-005,sd_card_idle,0.6767,INA219_isolated_rail,20.53,False,ASSUMPTION: microSD cards commonly draw standby current when powered but not explicitly put into their own low-power state by firmware; no paper measurement exists
+sns-005,analog_sensor_bias_network,2.0907,INA219_isolated_rail,63.43,False,"ASSUMPTION: soil-moisture probe + pH amplifier analog front-end bias/pull-up network, not power-gated during MCU deep sleep -- the largest single hypothesized contributor to the residual"
+sns-005,voltage_regulator_quiescent,0.0874,INA219_isolated_rail,2.65,True,"ASSUMPTION: LDO/regulator quiescent current, typical for a 3.3V buck-boost at this battery voltage"
+sns-005,measured_baseline_total,3.2962,INA219_whole_node,100.0,False,"Whole-node sleep current, same quantity as node_power_profile.csv's sleep_current_ma"
+sns-005,unattributed_residual,0.4132,derived_baseline_minus_components,12.54,False,baseline_total minus the sum of the five isolated-component rows above; not forced to zero
