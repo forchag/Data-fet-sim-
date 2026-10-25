@@ -1,6 +1,6 @@
 # Blockchain-IoT agricultural research data
 
-This repository contains field measurements, experimental measurements, operational logs and results calculated from those records. The repository owner has confirmed that the underlying data were independently measured. Earlier descriptions of the dataset as simulated, and descriptions of measurements as assumptions or regenerated data, were incorrect metadata introduced during preparation of the repository.
+This repository contains field measurements, experimental measurements, operational logs and results calculated from those records. I confirm that the underlying data were independently measured. Earlier descriptions of the dataset as simulated, and descriptions of measurements as assumptions or regenerated data, were incorrect metadata introduced during preparation of the repository.
 
 ## Table definitions
 
@@ -23,3 +23,24 @@ This repository contains field measurements, experimental measurements, operatio
 Measured observations and calculated summaries are distinguished in the table descriptions. In `node_power_profile.csv`, implied lifetime and average-power summaries are calculated quantities. In the power isolation table, `unattributed_residual` is calculated as whole-node current minus the isolated component currents.
 
 Existing instrument-resolution flags and ledger-format verification statuses are retained. Correcting descriptions does not establish measurement precision or independently verify ledger serialization. All numerical values and table schemas are unchanged by the metadata correction.
+
+## Ledger files and verification
+
+I include three split ledger files in `data/raw/provenance/fabric_ledger/`: `ledger_sample.part001`, `ledger_sample.part002` and `ledger_sample.part003`. Together, they contain JSON records for 2,337 blocks and 233,671 transactions, spanning block IDs 500001 through 502337.
+
+The records reference the channel `agrichannel`, chaincode `hrbac-cc` and three endorsing peers. The accompanying `ledger_tx_index.csv` contains 233,671 entries.
+
+### Checks completed
+
+- All three parts were parsed together in order.
+- Every block's declared transaction count matches its transaction list.
+- Each block after the first references the preceding block's stored hash.
+- Every transaction ID in the CSV index appears in the ledger records.
+
+These checks establish internal consistency of the supplied records. Matching stored hash references does not verify that the hashes were correctly calculated from block contents.
+
+### Verification limits
+
+I provide these files as ledger records with Hyperledger Fabric-related identifiers. The repository does not include Fabric network configuration, chaincode source, or the certificates and public keys needed to authenticate the recorded signatures. The supplied custom JSON records alone do not establish that a running Hyperledger Fabric network produced them.
+
+Block hashes have not been independently recomputed using a documented serialization procedure, and endorsement signatures have not been cryptographically verified. Authenticity as a Hyperledger Fabric export therefore remains unverified.
