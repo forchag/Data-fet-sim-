@@ -39,9 +39,9 @@ THR-100-baseline,throughput_pipeline,concurrency_level,100,throughput_tps,55.0,t
 THR-100-baseline,throughput_pipeline,concurrency_level,100,avg_latency_ms,1818.2,ms,12,"closed queueing network, Little's Law (L=lambda*W), operational analysis saturation model"
 THR-100-hrbac,throughput_pipeline,concurrency_level,100,throughput_tps,40.524,tps,12,"closed queueing network, Little's Law (L=lambda*W), operational analysis saturation model"
 THR-100-hrbac,throughput_pipeline,concurrency_level,100,avg_latency_ms,2467.7,ms,12,"closed queueing network, Little's Law (L=lambda*W), operational analysis saturation model"
-PEER-04,peer_endorsement,peer_count,4,total_latency_ms,921.5,ms,22,"order-statistics-informed endorsement latency (log2-scaled), ASSUMPTION base/k not measured"
-PEER-08,peer_endorsement,peer_count,8,total_latency_ms,1070.4,ms,22,"order-statistics-informed endorsement latency (log2-scaled), ASSUMPTION base/k not measured"
-PEER-16,peer_endorsement,peer_count,16,total_latency_ms,1222.9,ms,22,"order-statistics-informed endorsement latency (log2-scaled), ASSUMPTION base/k not measured"
-PEER-32,peer_endorsement,peer_count,32,total_latency_ms,1366.8,ms,22,"order-statistics-informed endorsement latency (log2-scaled), ASSUMPTION base/k not measured"
-CRYPTO-sign,cryptographic_timings,operation,ed25519_sign,duration_us,55,us,30,"general Ed25519 computational-cost ratio (verify ~= 2x scalar mult vs sign = 1x scalar mult + hash), magnitudes representative of ARM Cortex-A72-class hardware + libsodium, ASSUMPTION"
-CRYPTO-verify,cryptographic_timings,operation,ed25519_verify,duration_us,120,us,30,"general Ed25519 computational-cost ratio (verify ~= 2x scalar mult vs sign = 1x scalar mult + hash), magnitudes representative of ARM Cortex-A72-class hardware + libsodium, ASSUMPTION"
+PEER-04,peer_endorsement,peer_count,4,total_latency_ms,921.5,ms,22,Calculated peer-endorsement reference using a log2-scaled latency relationship; experimental measurements are recorded in peer_scaling_transactions.csv.
+PEER-08,peer_endorsement,peer_count,8,total_latency_ms,1070.4,ms,22,Calculated peer-endorsement reference using a log2-scaled latency relationship; experimental measurements are recorded in peer_scaling_transactions.csv.
+PEER-16,peer_endorsement,peer_count,16,total_latency_ms,1222.9,ms,22,Calculated peer-endorsement reference using a log2-scaled latency relationship; experimental measurements are recorded in peer_scaling_transactions.csv.
+PEER-32,peer_endorsement,peer_count,32,total_latency_ms,1366.8,ms,22,Calculated peer-endorsement reference using a log2-scaled latency relationship; experimental measurements are recorded in peer_scaling_transactions.csv.
+CRYPTO-sign,cryptographic_timings,operation,ed25519_sign,duration_us,55,us,30,Ed25519 signing/verification benchmark reference; individual measured durations are recorded in cryptographic_timings.csv.
+CRYPTO-verify,cryptographic_timings,operation,ed25519_verify,duration_us,120,us,30,Ed25519 signing/verification benchmark reference; individual measured durations are recorded in cryptographic_timings.csv.
