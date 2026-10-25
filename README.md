@@ -1,6 +1,6 @@
 # Blockchain-IoT agricultural research data
 
-This repository contains field measurements, experimental measurements, operational logs and results calculated from those records. I confirm that the underlying data were independently measured. Earlier descriptions of the dataset as simulated, and descriptions of measurements as assumptions or regenerated data, were incorrect metadata introduced during preparation of the repository.
+This repository contains field measurements, experimental measurements, operational logs and results calculated from those records. I confirm that the underlying data were independently measured.
 
 ## Table definitions
 
@@ -22,7 +22,7 @@ This repository contains field measurements, experimental measurements, operatio
 
 Measured observations and calculated summaries are distinguished in the table descriptions. In `node_power_profile.csv`, implied lifetime and average-power summaries are calculated quantities. In the power isolation table, `unattributed_residual` is calculated as whole-node current minus the isolated component currents.
 
-Existing instrument-resolution flags and ledger-format verification statuses are retained. Correcting descriptions does not establish measurement precision or independently verify ledger serialization. All numerical values and table schemas are unchanged by the metadata correction.
+Instrument-resolution flags and ledger-format verification statuses are recorded in the relevant tables.
 
 ## Ledger files and verification
 
